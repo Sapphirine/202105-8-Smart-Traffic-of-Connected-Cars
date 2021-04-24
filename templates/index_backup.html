@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <title>Smart Traffic of Connected Cars</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+            cache: false
+        });
+        $(document).ready(function(){
+        $("#refresh").click(function(){
+            var frame = document.getElementById("Manhattan_map");
+            frame.src = frame.src;
+        });
+        });
+    </script>
+</head>
+<style>
+    h1 {text-align: center;}
+    form {text-align: center;}
+    iframe {text-align: center;
+            position: relative;}
+    div{text-align:center;}
+</style>
+<body>  
+    <h1>Smart Traffic of Connected Car Server 🌏</h1>
+
+    <form action="/" method="post">
+        <label for="input_date">Pick A Date :</label>
+        <input type="date" id="inputDate" name="inputDate" value="2019-01-01"><br>
+        <label for="input_time">Pick A Time :</label>
+        <input type="time" id = "inputTime" name="inputTime" value="00:00:00" step="900"><br>
+        <input type="submit" value="Confirm!"/>
+    </form>
+    <div><button id="refresh">Refresh!</button></div>
+
+    <p align="center"><iframe class="map" id="Manhattan_map" src="/map" width="640" height="640">
+    </iframe></p>
+    <!-- <h3><b style="background-color: lightcoral; color: lightcyan;">
+        Render Folium on Flask done!
+    </b></h3> -->
+</body>
+</html>
